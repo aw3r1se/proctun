@@ -1,0 +1,3 @@
+[submodule "vendor/ndisapi"]
+	path = vendor/ndisapi
+	url = https://github.com/wiresock/ndisapi

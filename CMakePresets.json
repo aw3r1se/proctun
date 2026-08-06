@@ -1,0 +1,28 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": { "major": 3, "minor": 21, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "win-amd64-release-vs2026",
+      "displayName": "x64 Release (VS 2026)",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-windows-static"
+      }
+    },
+    {
+      "name": "win-amd64-release-vs2026-ndis",
+      "inherits": "win-amd64-release-vs2026",
+      "displayName": "x64 Release (VS 2026) + WinpkFilter engine",
+      "cacheVariables": { "PROCTUN_WITH_NDISAPI": "ON" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "win-amd64-release-vs2026", "configurePreset": "win-amd64-release-vs2026", "configuration": "Release" },
+    { "name": "win-amd64-release-vs2026-ndis", "configurePreset": "win-amd64-release-vs2026-ndis", "configuration": "Release" }
+  ]
+}

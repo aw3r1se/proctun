@@ -1,0 +1,11 @@
+{
+  "name": "proctun",
+  "version": "0.1.0",
+  "description": "Per-process split tunneling for Windows (WinpkFilter).",
+  "dependencies": [
+    "cli11",
+    "spdlog",
+    "nlohmann-json",
+    "ms-gsl"
+  ]
+}

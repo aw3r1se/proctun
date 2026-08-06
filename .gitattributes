@@ -1,0 +1,30 @@
+# LF everywhere — in the repository and in the working copy (overrides any
+# local core.autocrlf). Only Windows-specific scripts below get CRLF.
+* text=auto eol=lf
+
+# Sources, build files, docs
+*.cpp  text
+*.hpp  text
+*.h    text
+*.md   text
+*.json text
+*.txt  text
+.gitignore   text
+.gitattributes text
+.gitmodules  text
+
+# Windows scripts break without CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.reg text eol=crlf
+
+# Binaries — never convert
+*.exe binary
+*.dll binary
+*.lib binary
+*.pdb binary
+*.msi binary
+*.sys binary
+*.png binary
+*.ico binary
